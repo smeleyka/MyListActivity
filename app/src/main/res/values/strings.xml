@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">MyListActivity</string>
+    <string-array name="cat_arr">
+        <item>Барсик</item>
+        <item>Бобик</item>
+        <item>Тузик</item>
+        <item>Снежок</item>
+    </string-array>
+
+    <string-array name="cat_arr_descr">
+        <item>белый</item>
+        <item>Серый</item>
+        <item>Красный</item>
+        <item>Черный</item>
+    </string-array>
+
+</resources>

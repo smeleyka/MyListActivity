@@ -62,64 +62,6 @@ public class MainActivity extends ListActivity {
 
     }
 
-    public class MyArrayAdapter<T> extends ArrayAdapter<T> {
-
-        MyArrayAdapter(Context context, int resource, int textViewResourceId, List<T> objects) {
-            super(context, resource, textViewResourceId, objects);
-        }
-
-        @NonNull
-        @Override
-        private  View createViewFromResource() {
-            return createViewFromResource(,,,,);
-        }
-
-        @NonNull
-        @Override
-        private  View createViewFromResource(@NonNull LayoutInflater inflater, int position,
-                                             @Nullable View convertView, @NonNull ViewGroup parent, int resource) {
-            final View view;
-            final TextView text;
-
-            if (convertView == null) {
-                view = inflater.inflate(resource, parent, false);
-            } else {
-                view = convertView;
-            }
-
-            try {
-                if (mFieldId == 0) {
-                    //  If no custom field is assigned, assume the whole resource is a TextView
-                    text = (TextView) view;
-                } else {
-                    //  Otherwise, find the TextView field within the layout
-                    text = (TextView) view.findViewById(mFieldId);
-
-                    if (text == null) {
-                        throw new RuntimeException("Failed to find view with ID "
-                                + mContext.getResources().getResourceName(mFieldId)
-                                + " in item layout");
-                    }
-                }
-            } catch (ClassCastException e) {
-                Log.e("ArrayAdapter", "You must supply a resource ID for a TextView");
-                throw new IllegalStateException(
-                        "ArrayAdapter requires the resource ID to be a TextView", e);
-            }
-
-            final T item = getItem(position);
-            if (item instanceof CharSequence) {
-                text.setText((CharSequence) item);
-            } else {
-                text.setText(item.toString());
-            }
-
-            return view;
-        }
-
-
-
-    }
 }
 
 

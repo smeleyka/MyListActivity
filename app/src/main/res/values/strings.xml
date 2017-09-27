@@ -14,4 +14,11 @@
         <item>Черный</item>
     </string-array>
 
+    <string-array name="cat_img">
+        <item>barsik</item>
+        <item>bobik</item>
+        <item>tuzik</item>
+        <item>snezhok</item>
+    </string-array>
+
 </resources>
